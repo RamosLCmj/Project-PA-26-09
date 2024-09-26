@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horários de Coleta</title>
+    <link rel="stylesheet" href="coleta.css">
+    <script>
+        function filtrarBairro() {
+            var bairroSelecionado = document.getElementById('bairroSelect').value;
+            var bairros = document.getElementsByClassName('collection-point');
+            
+            for (var i = 0; i < bairros.length; i++) {
+                var bairroNome = bairros[i].getElementsByTagName('h3')[0].innerText;
+                if (bairroSelecionado === 'Todos' || bairroNome === bairroSelecionado) {
+                    bairros[i].style.display = 'block';
+                } else {
+                    bairros[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <a href="index.html">   <img src="logo def.png" class="logo" alt="Logo Planeta Agente"> </a>
+        <h1><a href="index.html" class="reset">Planet <img src="reciclaimg.png" height="25px" width="25px" > Gente</a></h1>
+        <ul>
+            <li><a href="sobre_nos.html">Sobre o Projeto</a></li>
+            <li><a href="eco2.html">Eco Pontos</a></li>
+            <li><a href="horario_coleta.html">Horários de Coleta</a></li>
+            <li><a href="associacoes.html">Associações</a></li>
+            <li><a href="como_reciclar.html">Como Reciclar</a></li>
+            <li><a href="noticias.html">Notícias</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <section class="section-title">
+            <h2>Bairros e Horários de Coleta</h2>
+            <p>Encontre abaixo os pontos de coleta de resíduos recicláveis em 7 bairros de Cataguases.</p>
+            <!-- Filtro de bairro -->
+            <label for="bairroSelect">Selecione seu bairro:</label>
+            <select id="bairroSelect" onchange="filtrarBairro()">
+                <option value="Todos">Todos</option>
+                <option value="Centro">Centro</option>
+                <option value="Granjaria">Granjaria</option>
+                <option value="Pouso Alegre">Pouso Alegre</option>
+                <option value="Dico Leite">Dico Leite</option>
+                <option value="Leonardo">Leonardo</option>
+                <option value="Haidée">Haidée</option>
+                <option value="Pampulha">Pampulha</option>
+            </select>
+        </section>
+
+        <div class="collection-point">
+            <h3>Centro</h3>
+            <p><strong>Local:</strong> Praça Rui Barbosa</p>
+            <p><strong>Horário:</strong> Segunda a Sexta, das 8h às 18h</p>
+        </div>
+
+        <div class="collection-point">
+            <h3>Granjaria</h3>
+            <p><strong>Local:</strong> Praça Santa Rita</p>
+            <p><strong>Horário:</strong> Terça e Quinta, das 8h às 17h</p>
+        </div>
+
+        <div class="collection-point">
+            <h3>Pouso Alegre</h3>
+            <p><strong>Local:</strong> Praça Chácara</p>
+            <p><strong>Horário:</strong> Segunda e Quarta, das 9h às 18h</p>
+        </div>
+
+        <div class="collection-point">
+            <h3>Dico Leite</h3>
+            <p><strong>Local:</strong> Rua José Soares</p>
+            <p><strong>Horário:</strong> Terça e Quinta, das 10h às 16h</p>
+        </div>
+
+        <div class="collection-point">
+            <h3>Leonardo</h3>
+            <p><strong>Local:</strong> Praça do Leonardo</p>
+            <p><strong>Horário:</strong> Segunda e Sexta, das 9h às 17h</p>
+        </div>
+
+        <div class="collection-point">
+            <h3>Haidée</h3>
+            <p><strong>Local:</strong> Bairro Haidée</p>
+            <p><strong>Horário:</strong> Quarta e Sexta, das 8h às 18h</p>
+        </div>
+
+        <div class="collection-point">
+            <h3>Pampulha</h3>
+            <p><strong>Local:</strong> Rua Pampulha</p>
+            <p><strong>Horário:</strong> Segunda e Quinta, das 8h às 17h</p>
+        </div>
+
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024. Todos os direitos reservados.</p>
+        <p>Feito por: PlanetAgente - Instituto Federal Sudeste MG Cataguases</p>
+    </footer>
+
+</body>
+</html>
